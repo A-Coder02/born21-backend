@@ -83,7 +83,7 @@ const emailTemplate = (clientInfo) => {
     <div class="subheader">🚀 New Client for Audit</div>
     
     <div class="content">
-      <div style="background-color:black;color:white;padding: 6px 12px; border-radius: 32px;width:fit-content" >${clientInfo.case_study}</div>
+      <p><span class="highlight">Case Study:</span> ${clientInfo.case_study}</p>
       <p><span class="highlight">Name:</span> ${clientInfo.name}</p>
       <p><span class="highlight">Email:</span> ${clientInfo.email}</p>
       <p><span class="highlight">Company:</span> ${clientInfo.company_name}</p>
