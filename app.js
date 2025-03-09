@@ -16,7 +16,7 @@ app.use(express.static("public"));
 
 
 // Route to list all PDFs in the 'pdf' folder
-app.get("/pdf", (req, res) => {
+app.get("/api/pdf", (req, res) => {
   const pdfDir = path.join(__dirname, "public", "pdf");
   fs.readdir(pdfDir, (err, files) => {
     if (err) {
@@ -28,7 +28,7 @@ app.get("/pdf", (req, res) => {
 });
 
 // Route to serve a specific PDF file dynamically
-app.get("/pdf/:filename", (req, res) => {
+app.get("/api/pdf/:filename", (req, res) => {
   const filePath = path.join(__dirname, "public", "pdf", req.params.filename);
 
   if (fs.existsSync(filePath)) {
@@ -38,8 +38,8 @@ app.get("/pdf/:filename", (req, res) => {
   }
 });
 
-app.get('/', (req, res) => res.send('<h1>Born21 Backend API</h1>'))
+app.get('/api/', (req, res) => res.send('<h1>Born21 Backend API</h1>'))
 // app.post("/email-enquiry", sendEmailForEnquiry);
-app.post("/email-audit", sendEmailForAudit);
+app.post("/api/email-audit", sendEmailForAudit);
 
 app.listen(5000, console.log(5000, "PORT"));
