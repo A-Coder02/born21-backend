@@ -57,7 +57,7 @@ const sendEmailForAudit = async (req, res) => {
     function (error, info) {
       if (error) {
         console.log(error);
-        res
+        return res
           .status(500)
           .json({ data: null, success: false, msg: "Email Not Sent" });
       } else {

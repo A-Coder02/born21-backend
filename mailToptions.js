@@ -19,7 +19,7 @@ const {
 //   text: ownerEmailText(reqBody),
 // });
 var ownerForAuditMailOptions = (reqBody) => ({
-  from: "arbaj897ansari@gmail.com",
+  from: reqBody.email,
   to: "hello@born21.com",
   subject: "New Client For Audit",
   html: emailTemplate(reqBody),
